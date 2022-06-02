@@ -1,2 +1,21 @@
 ---
-# tasks file for bootstrap
+- name: Set system hostname.
+  hostname:
+    name: "{{ system_hostname }}"
+
+- name: Set timezone.
+  timezone:
+    hwclock: "{{ system_hwclock }}"
+    name: "{{ system_timezone_name }}"
+
+- name: Update all packages.
+  package:
+    name: "*"
+    state: latest
+    update_cache: yes
+
+- name: Install packages.
+  package:
+    name: "{{ system_packages }}"
+    state: latest
+    update_cache: yes

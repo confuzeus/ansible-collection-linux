@@ -1,0 +1,6 @@
+- name: Setup redhat.
+  hosts:
+    - redhat
+  roles:
+    - name: bootstrap
+      become: yes

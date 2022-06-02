@@ -1,6 +1,7 @@
-hosts:
-  - debian
+- name: Setup debian.
+  hosts:
+    - debian
 
-roles:
-  - name: bootstrap
-    become: yes
+  roles:
+    - name: bootstrap
+      become: yes

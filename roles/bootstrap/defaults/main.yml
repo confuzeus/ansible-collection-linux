@@ -1,2 +1,23 @@
 ---
-# defaults file for bootstrap
+system_hostname: "myserver"
+system_hwclock: "UTC"
+system_timezone_name: "Indian/Mauritius"
+
+system_packages:
+  - "apt-transport-https"
+  - "curl"
+  - "lsb-release"
+  - "ca-certificates"
+  - "vim"
+  - "tmux"
+  - "gnupg-agent"
+  - "software-properties-common"
+  - "nginx"
+  - "fail2ban"
+  - "python3-certbot"
+  - "python3-certbot-dns-cloudflare"
+  - "build-essential"
+  - "make"
+  - "ufw"
+  - "gpg"
+  - "git"

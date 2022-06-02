@@ -4,3 +4,7 @@
   roles:
     - name: bootstrap
       become: yes
+
+  vars:
+    system_packages:
+      - "tmux"

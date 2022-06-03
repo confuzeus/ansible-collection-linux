@@ -1,0 +1,6 @@
+- name: Setup Linux systems.
+  hosts: all
+
+  roles:
+    - role: bootstrap
+      become: true

@@ -3,3 +3,4 @@ inventory.ini
 playbook.redhat.yml
 playbook.debian.yml
 .vagrant
+playbook.yml

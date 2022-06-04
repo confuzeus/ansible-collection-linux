@@ -14,8 +14,24 @@
     state: latest
     update_cache: yes
 
+- name: Set packages variable.
+  set_fact:
+    system_packages: "{{ lookup('varnames', 'system_packages_' + item) }}"
+  loop: "{{ group_names }}"
+
 - name: Install packages.
   package:
-    name: "{{ system_packages }}"
+    name: "{{ item }}"
     state: latest
     update_cache: yes
+  loop: "{{ lookup('vars', system_packages, wantlist=True) }}"
+
+- name: Gather package stats
+  package_facts:
+    manager: auto
+
+- name: Include docker tasks.
+  include_tasks: _docker.yml
+  when: "'docker' not in ansible_facts.packages"
+  tags:
+    - docker

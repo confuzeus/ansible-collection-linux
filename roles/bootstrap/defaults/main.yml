@@ -5,6 +5,13 @@ system_timezone_name: "Indian/Mauritius"
 
 system_packages_debian:
   - "tmux"
+  - "git"
 
 system_packages_redhat:
   - "tmux"
+  - "git"
+
+debian_codename: "bullseye"
+debian_apt_arch: "amd64"
+
+docker_apt_keyring_path: "/etc/apt/trusted.gpg.d/docker.gpg"

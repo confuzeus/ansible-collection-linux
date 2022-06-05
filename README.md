@@ -22,6 +22,14 @@ The role has been tested with the following distributions:
 1. Debian 11 (bullseye).
 2. Rocky Linux 8.
 
+#### tags
+
+Use tags to control which features to enable.
+
+##### docker
+
+Run tasks related to *docker*.
+
 #### Variables
 
 ##### system_hostname (String)

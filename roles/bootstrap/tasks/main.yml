@@ -14,17 +14,12 @@
     state: latest
     update_cache: yes
 
-- name: Set packages variable.
-  set_fact:
-    system_packages: "{{ lookup('varnames', 'system_packages_' + item) }}"
-  loop: "{{ group_names }}"
-
 - name: Install packages.
   package:
     name: "{{ item }}"
     state: latest
     update_cache: yes
-  loop: "{{ lookup('vars', system_packages, wantlist=True) }}"
+  loop: "{{ system_packages }}"
 
 - name: Gather package stats
   package_facts:

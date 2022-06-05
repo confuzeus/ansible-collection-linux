@@ -5,3 +5,4 @@ playbook.debian.yml
 .vagrant
 playbook.yml
 .vscode
+*.log

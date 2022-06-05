@@ -1,0 +1,5 @@
+---
+# Variables specific to a group.
+system_hostname: "myserver"
+system_hwclock: "UTC"
+system_timezone_name: "Indian/Mauritius"

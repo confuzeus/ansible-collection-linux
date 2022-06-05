@@ -40,7 +40,7 @@
   group:
     name: "{{ item.name }}"
     state: present
-  loop: "{{ system_groups }}"
+  loop: "{{ os_groups }}"
 
 - name: Setup users.
   user:
@@ -49,4 +49,4 @@
     append: yes
     groups: "{{ item.groups|join(',') }}"
     shell: "{{ item.shell }}"
-  loop: "{{ system_users }}"
+  loop: "{{ os_users }}"

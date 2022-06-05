@@ -60,3 +60,31 @@ Path where the keyring from upstream should be saved.
 The hashed password for the *root* user.
 
 Use a tool like *mkpasswd* to hash passwords.
+
+#### os_groups (List[Map])
+
+A list of group maps to create.
+
+The map needs to contain a single key called *name* that maps to a string
+containing the group name.
+
+*Default:* [{'name': 'sshusers'}]
+
+#### os_users (List[Map])
+
+A list of user maps.
+
+The map needs to contain the following keys:
+
+- name
+- password_hash
+- groups
+- shell
+
+*name* is the user's username.
+
+*password_hash* is the same as *root_password_hash* as above.
+
+*groups* is a list of groups that the user should be part of.
+
+*shell* is the full path to the user's default shell.

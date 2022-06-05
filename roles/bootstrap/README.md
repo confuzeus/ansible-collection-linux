@@ -8,6 +8,7 @@ It currently does the following:
 2. Set the system timezone.
 3. Install packages.
 4. Install Docker from upstream repositories.
+5. Setup users.
 
 The role has been tested with the following distributions:
 
@@ -53,3 +54,9 @@ A list of packages to install.
 Path where the keyring from upstream should be saved.
 
 *Default:* /etc/apt/trusted.gpg.d/docker.gpg
+
+#### root_password_hash (String)
+
+The hashed password for the *root* user.
+
+Use a tool like *mkpasswd* to hash passwords.

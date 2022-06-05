@@ -30,3 +30,8 @@
   when: "'docker' not in ansible_facts.packages"
   tags:
     - docker
+
+- name: Set root password.
+  user:
+    name: root
+    password: "{{ root_password_hash }}"

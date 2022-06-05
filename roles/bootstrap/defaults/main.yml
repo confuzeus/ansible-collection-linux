@@ -10,3 +10,18 @@ system_packages:
 docker_apt_keyring_path: "/etc/apt/trusted.gpg.d/docker.gpg"
 
 root_password_hash: "$6$Fm3ABHn6oiQoA5b$i0Sln78ctnxvLKt7GmbixqXQIDSs9TMs0BLY9FRY23cT55d8HwubkSsqlly85LRJ.JsmVNLb8b9Hg7EwJnt/F."
+
+system_groups:
+  - name: sshusers
+
+system_users:
+  - name: Alice
+    password_hash: "$6$Fm3ABHn6oiQoA5b$i0Sln78ctnxvLKt7GmbixqXQIDSs9TMs0BLY9FRY23cT55d8HwubkSsqlly85LRJ.JsmVNLb8b9Hg7EwJnt/F."
+    groups:
+      - sshusers
+    shell: "/bin/bash"
+
+  - name: Bob
+    password_hash: "$6$Fm3ABHn6oiQoA5b$i0Sln78ctnxvLKt7GmbixqXQIDSs9TMs0BLY9FRY23cT55d8HwubkSsqlly85LRJ.JsmVNLb8b9Hg7EwJnt/F."
+    groups: []
+    shell: "/bin/bash"

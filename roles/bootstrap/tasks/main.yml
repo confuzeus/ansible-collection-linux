@@ -35,3 +35,18 @@
   user:
     name: root
     password: "{{ root_password_hash }}"
+
+- name: Setup groups.
+  group:
+    name: "{{ item.name }}"
+    state: present
+  loop: "{{ system_groups }}"
+
+- name: Setup users.
+  user:
+    name: "{{ item.name }}"
+    password: "{{ item.password_hash }}"
+    append: yes
+    groups: "{{ item.groups|join(',') }}"
+    shell: "{{ item.shell }}"
+  loop: "{{ system_users }}"

@@ -1,6 +1,19 @@
-- name: Setup Linux systems.
-  hosts: all
+- name: Setup Debian Linux.
+  hosts: debian
 
   roles:
     - role: bootstrap
       become: true
+
+  vars_files:
+    - vars.debian.yml
+
+- name: Setup RedHat Linux.
+  hosts: redhat
+
+  roles:
+    - role: bootstrap
+      become: true
+
+  vars_files:
+    - vars.redhat.yml

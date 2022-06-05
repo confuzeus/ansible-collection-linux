@@ -36,28 +36,28 @@ Run tasks related to *docker*.
 
 This string will be used as the system's hostname.
 
-**Default:** myserver
+*Default:* myserver
 
 ##### system_hwclock (String)
 
 Set the hardware clock to this string.
 
-**Default:** UTC
+*Default:* UTC
 
 ##### system_timezone_name (String)
 
 Set the system's timezone to this region.
 
-**Default:** Indian/Mauritius
+*Default:* Indian/Mauritius
 
 ##### system_packages (List)
 
 A list of packages to install.
 
-**Default:**: ['tmux', 'git']
+*Default:*: ['tmux', 'git']
 
 ##### docker_apt_keyring_path (String)
 
 Path where the keyring from upstream should be saved.
 
-**Default:** /etc/apt/trusted.gpg.d/docker.gpg
+*Default:* /etc/apt/trusted.gpg.d/docker.gpg

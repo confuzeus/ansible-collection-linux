@@ -6,3 +6,5 @@ playbook.debian.yml
 playbook.yml
 .vscode
 *.log
+vars.debian.yml
+vars.redhat.yml

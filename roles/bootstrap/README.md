@@ -1,28 +1,55 @@
-Role Name
-=========
+# bootstrap
 
-Boostrap a production ready Linux system from a bare install.
+The bootstrap role is used to prepare a minimal Linux install for production.
 
-Role Variables
---------------
+It currently does the following:
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+1. Set the system hostname.
+2. Set the system timezone.
+3. Install packages.
+4. Install Docker from upstream repositories.
 
-Example Playbook
-----------------
+The role has been tested with the following distributions:
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+1. Debian 11 (bullseye).
+2. Rocky Linux 8.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+## tags
 
-License
--------
+Use tags to control which features to enable.
 
-GPL-3.0
+### docker
 
-Author Information
-------------------
+Run tasks related to *docker*.
 
-Josh Michael Karamuth <michael@confuzeus.com>
+### Variables
+
+#### system_hostname (String)
+
+This string will be used as the system's hostname.
+
+*Default:* myserver
+
+#### system_hwclock (String)
+
+Set the hardware clock to this string.
+
+*Default:* UTC
+
+#### system_timezone_name (String)
+
+Set the system's timezone to this region.
+
+*Default:* Indian/Mauritius
+
+#### system_packages (List)
+
+A list of packages to install.
+
+*Default:*: ['tmux', 'git']
+
+#### docker_apt_keyring_path (String)
+
+Path where the keyring from upstream should be saved.
+
+*Default:* /etc/apt/trusted.gpg.d/docker.gpg

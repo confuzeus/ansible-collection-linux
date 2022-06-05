@@ -12,9 +12,17 @@
     url: "https://download.docker.com/linux/debian/gpg"
     keyring: "{{ docker_apt_keyring_path }}"
 
+- name: Register system architecture.
+  shell: "dpkg --print-architecture"
+  register: debian_sys_arch
+
+- name: Register Debian codename.
+  shell: "lsb_release -cs"
+  register: debian_codename
+
 - name: Add Docker repository.
   apt_repository:
-    repo: "deb [arch={{ debian_apt_arch }} signed-by={{ docker_apt_keyring_path }}] https://download.docker.com/linux/debian {{ debian_codename }} stable"
+    repo: "deb [arch={{ debian_sys_arch.stdout }} signed-by={{ docker_apt_keyring_path }}] https://download.docker.com/linux/debian {{ debian_codename.stdout }} stable"
     filename: "docker"
 
 - name: Install Docker packages.
